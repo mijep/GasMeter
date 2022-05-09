@@ -40,16 +40,13 @@ class GasMeterReader:
         self._debug = True
         self._trainFolder = trainFolder
 
-        self._train()
+        #self._train()
         pass
 
     def classify(self, file):
         imp = ImageProcessor(file)
         imp.process()
-
-        rois = imp.rois.copy()
-        
-        
+        rois = imp.rois.copy()                
         digits = []
         for roi in rois:
             cv2.imshow("test", roi)        
@@ -90,10 +87,6 @@ class GasMeterReader:
     
 
         pass
-
-
-
-        
 
     def processFile(self, file):
         im = ImageProcessor(file)

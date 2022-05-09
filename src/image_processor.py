@@ -5,11 +5,11 @@ from config import config
 
 
 class ImageProcessor:
-    def __init__(self, image_path) -> None:
-        self._image_path = image_path
+    def __init__(self, image) -> None:
+        #self._image_path = image_path
         self._debug = config.getboolean(config.default_section, 'debug')
 
-        self.original_image = cv2.imread(self._image_path)
+        self.original_image = image
         self.show_image(self.original_image, "1. Original Image")
 
         self.original_image = self.rotate(self.original_image, config.getint(config.default_section, 'rotation_deg'))
